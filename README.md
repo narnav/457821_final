@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CodeQuest JS
 
 Production-style monorepo for the CodeQuest JS mobile learning platform.
@@ -156,3 +157,8 @@ cd mobile && npx tsc --noEmit
 # Backend health
 curl http://localhost:4000/health
 ```
+=======
+# 457821_final
+
+final project
+>>>>>>> upstream/main

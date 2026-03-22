@@ -1,0 +1,88 @@
+# ================================
+# Python
+# ================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ================================
+# Virtual Environments
+# ================================
+venv/
+.venv/
+ENV/
+env/
+
+# ================================
+# Environment / Secrets
+# ================================
+.env
+.env.*
+*.env
+
+# ================================
+# Node / Frontend
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+.vite/
+
+# ================================
+# Go
+# ================================
+bin/
+*.exe
+*.out
+*.test
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
+
+# ================================
+# OS / Editor
+# ================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ================================
+# Database / Local Data
+# ================================
+*.sqlite
+*.db
+
+# ================================
+# Jupyter / Notebooks
+# ================================
+.ipynb_checkpoints/
+
+# ================================
+# Docker (local only)
+# ================================
+*.local.yml
+*.override.yml
+
+# ================================
+# Curriculum build artifacts (if any)
+# ================================
+output/
+.tmp/

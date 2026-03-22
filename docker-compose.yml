@@ -1,4 +1,20 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: codequest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d codequest"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+
   localstack:
     image: localstack/localstack:latest
     ports:
@@ -10,3 +26,6 @@ services:
       - AWS_SECRET_ACCESS_KEY=test
     volumes:
       - ./infra/localstack/init-s3.sh:/etc/localstack/init/ready.d/init-s3.sh
+
+volumes:
+  postgres_data:

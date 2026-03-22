@@ -1,0 +1,25 @@
+# Core dependencies - based on actual imports in the codebase
+pydantic>=2.0.0
+PyYAML>=6.0
+
+# Web framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+
+# Authentication
+passlib>=1.7.4
+bcrypt>=4.0.1,<4.1
+python-jose[cryptography]>=3.3.0
+email-validator>=2.0.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Database
+sqlmodel>=0.0.16
+
+# Testing
+pytest>=7.0.0
+
+# Development
+polyfactory>=3.2.0  # Mock data generation for dev scripts

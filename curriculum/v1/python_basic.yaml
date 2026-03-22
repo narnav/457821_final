@@ -1,0 +1,1042 @@
+version: "1.0"
+track:
+  id: python_basic
+  name: Python Basics
+
+modules:
+  - id: module_1
+    name: Thinking Like a Programmer
+    order: 1
+
+    exercise_pool:
+      guided_practice:
+        - id: ex_1_1
+          name: Predict the Output
+          skills: [predict_output, trace_code]
+          instructions: |
+            Read the code below carefully. Without running it, predict exactly what will be printed to the console.
+
+            Type the expected output in the answer box and submit.
+          starter_code: |
+            print("Hello")
+            print("World")
+            print(2 + 3)
+          expected_output: |
+            Hello
+            World
+            5
+
+        - id: ex_1_2
+          name: Line by Line
+          skills: [explain_code, read_before_write]
+          answer_mode: code
+          instructions: |
+            Read the code below line by line. For each line, write a comment explaining what it does.
+
+            Add a comment above each line using the # symbol.
+          starter_code: |
+            message = "Python"
+            print(message)
+            print(len(message))
+
+        - id: ex_1_3
+          name: Order Matters
+          skills: [execution_order, predict_output]
+          instructions: |
+            The lines below will run top to bottom. Predict the output in order.
+
+            Write each output value on its own line, exactly as Python would print it.
+          starter_code: |
+            x = 10
+            print(x)
+            x = 20
+            print(x)
+            print(x + 5)
+          expected_output: |
+            10
+            20
+            25
+
+        - id: ex_1_4
+          name: What Changed
+          skills: [string_vs_expression, predict_output]
+          instructions: |
+            Look at the two print statements below. One prints a string, the other prints an expression.
+
+            Predict the output of each line. Pay attention to the difference between quotes and no quotes.
+          starter_code: |
+            print("3 + 4")
+            print(3 + 4)
+          expected_output: |
+            3 + 4
+            7
+
+      debugging:
+        - id: ex_1_5
+          name: Spot the Problem
+          skills: [identify_syntax_error, explain_error]
+          instructions: |
+            The code below has a syntax error that prevents it from running.
+
+            Find the error, fix it, and make sure the code prints the intended message.
+          starter_code: |
+            print("Welcome to Python!)
+
+        - id: ex_1_6
+          name: Missing Pieces
+          skills: [identify_syntax_error, multiple_errors]
+          instructions: |
+            The code below has multiple syntax errors. Find and fix all of them.
+
+            The intended behavior is to print two messages.
+          starter_code: |
+            print("Hello"
+            print "Goodbye")
+
+        - id: ex_1_7
+          name: Wrong Output
+          skills: [logic_error, string_vs_expression]
+          instructions: |
+            The code below runs without errors, but it doesn't produce the intended output.
+            The programmer wanted to display the result of 10 + 5, not the literal text.
+
+            Fix the code so it calculates and prints the correct number.
+          starter_code: |
+            print("10 + 5")
+
+      independent_task:
+        - id: ex_1_8
+          name: Your First Program
+          skills: [write_code, use_print]
+          instructions: |
+            Write a program that prints your name on the first line and your favorite color on the second line.
+
+            Use two separate print() statements.
+          starter_code: |
+            # Write your program below
+
+        - id: ex_1_9
+          name: Simple Math Display
+          skills: [write_code, arithmetic, use_print]
+          instructions: |
+            Write a program that prints the results of three calculations:
+            - 15 + 27
+            - 100 - 37
+            - 8 * 6
+
+            Each result should appear on its own line. Use print() with the actual math expressions (not pre-calculated numbers).
+          starter_code: |
+            # Print three calculations
+
+        - id: ex_1_10
+          name: Message Builder
+          skills: [write_code, use_print, multi_line]
+          instructions: |
+            Write a program that prints a 3-line greeting card:
+
+            Line 1: A greeting (e.g., "Happy Birthday!")
+            Line 2: A short personal message
+            Line 3: Your name
+
+            Use one print() call per line.
+          starter_code: |
+            # Build your greeting card
+
+  - id: module_2
+    name: Variables and Data Types
+    order: 2
+
+    exercise_pool:
+      guided_practice:
+        - id: ex_2_1
+          name: Trace the Variable
+          skills: [trace_values, reassignment]
+          instructions: |
+            Trace the value of the variable through each step. After reading the code, predict what the final print() will output.
+
+            Write the expected output in the answer box.
+          starter_code: |
+            score = 0
+            score = score + 10
+            score = score + 5
+            print(score)
+          expected_output: "15"
+
+        - id: ex_2_2
+          name: What Type Is It
+          skills: [identify_types, type_awareness]
+          answer_mode: code
+          instructions: |
+            For each variable below, write a comment stating its type (int, float, str, or bool).
+
+            Add your comment after each assignment line.
+          starter_code: |
+            a = 42
+            b = "hello"
+            c = 3.14
+            d = True
+
+        - id: ex_2_3
+          name: Name That Variable
+          skills: [naming_conventions, readability]
+          answer_mode: code
+          instructions: |
+            The code below uses poor variable names. Rename the variables to be descriptive and follow Python naming conventions (snake_case).
+
+            Keep the logic exactly the same — only change the variable names.
+          starter_code: |
+            x = "Alice"
+            y = 25
+            z = x + " is " + str(y) + " years old"
+            print(z)
+
+        - id: ex_2_4
+          name: Predict the Swap
+          skills: [trace_values, reassignment]
+          instructions: |
+            This code attempts to swap the values of two variables. Trace through it carefully and predict what will be printed.
+
+            Does the swap work correctly? Write the output.
+          starter_code: |
+            a = "left"
+            b = "right"
+            temp = a
+            a = b
+            b = temp
+            print(a, b)
+          expected_output: "right left"
+
+        - id: ex_2_5
+          name: String or Number
+          skills: [type_awareness, predict_output]
+          instructions: |
+            Predict the output of each print statement. Pay close attention to whether values are strings or numbers — the + operator behaves differently for each.
+          starter_code: |
+            x = "3"
+            y = "4"
+            print(x + y)
+            a = 3
+            b = 4
+            print(a + b)
+          expected_output: |
+            34
+            7
+
+      debugging:
+        - id: ex_2_6
+          name: Type Mismatch
+          skills: [type_errors, fix_bugs]
+          instructions: |
+            The code below crashes with a TypeError. Find the type mismatch and fix it so the message prints correctly.
+
+            The output should read: "You have 5 items"
+          starter_code: |
+            count = 5
+            message = "You have " + count + " items"
+            print(message)
+
+        - id: ex_2_7
+          name: Overwritten Variable
+          skills: [trace_values, identify_bugs]
+          instructions: |
+            The programmer intended to print both the width and height, but something went wrong. Find and fix the bug.
+
+            Expected output should show width=10 and height=20.
+          starter_code: |
+            width = 10
+            height = 20
+            width = height
+            print("Width:", width)
+            print("Height:", height)
+
+        - id: ex_2_8
+          name: Unclear Names
+          skills: [naming_conventions, refactoring]
+          instructions: |
+            The code works but is hard to understand because of poor variable names. Refactor the variable names to be clear and descriptive.
+
+            Do not change what the code does — only rename variables.
+          starter_code: |
+            a = 50
+            b = 8
+            c = a * b
+            d = c * 0.1
+            e = c + d
+            print(e)
+
+        - id: ex_2_9
+          name: Broken Calculation
+          skills: [arithmetic, operator_precedence]
+          instructions: |
+            The code should calculate the average of three test scores, but the result is wrong.
+
+            Fix the calculation so it correctly computes the average (should be 80.0).
+          starter_code: |
+            score1 = 70
+            score2 = 85
+            score3 = 85
+            average = score1 + score2 + score3 / 3
+            print(average)
+
+      independent_task:
+        - id: ex_2_10
+          name: Temperature Converter
+          skills: [arithmetic, variables, formulas]
+          instructions: |
+            Write a program that converts a temperature from Celsius to Fahrenheit.
+
+            1. Create a variable celsius set to 25
+            2. Calculate fahrenheit using the formula: F = C * 9/5 + 32
+            3. Print the result in a readable format like: "25°C is 77.0°F"
+          starter_code: |
+            # Temperature converter
+
+        - id: ex_2_11
+          name: Rectangle Calculator
+          skills: [arithmetic, variables, formulas]
+          instructions: |
+            Write a program that calculates the area and perimeter of a rectangle.
+
+            1. Create variables for width (8) and height (5)
+            2. Calculate area (width * height) and perimeter (2 * (width + height))
+            3. Print both results with labels
+          starter_code: |
+            # Rectangle calculator
+
+        - id: ex_2_12
+          name: Personal Info Card
+          skills: [variables, data_types, print]
+          instructions: |
+            Write a program that stores personal information in variables and displays it as a formatted card.
+
+            Store: name (string), age (integer), city (string), is_student (boolean).
+            Print each piece of information on its own line with a label.
+          starter_code: |
+            # Personal info card
+
+  - id: module_3
+    name: Conditions and Logic
+    order: 3
+
+    exercise_pool:
+      guided_practice:
+        - id: ex_3_1
+          name: Which Branch Runs
+          skills: [branch_tracing, conditionals]
+          instructions: |
+            Read the code below and predict which branch will execute. Write the exact output.
+          starter_code: |
+            temperature = 35
+            if temperature > 30:
+                print("It's hot outside!")
+            elif temperature > 20:
+                print("Nice weather.")
+            else:
+                print("It's cold.")
+          expected_output: "It's hot outside!"
+
+        - id: ex_3_2
+          name: True or False
+          skills: [boolean_evaluation, comparison_operators]
+          instructions: |
+            For each expression below, predict whether it evaluates to True or False. Write the exact output, one value per line.
+          starter_code: |
+            print(5 > 3)
+            print(10 == "10")
+            print(7 != 7)
+            print(3 <= 3)
+          expected_output: |
+            True
+            False
+            False
+            True
+
+        - id: ex_3_3
+          name: Combine Conditions
+          skills: [logical_operators, boolean_logic]
+          instructions: |
+            Predict the output of each print statement. Think carefully about how `and`, `or`, and `not` combine the conditions.
+          starter_code: |
+            age = 20
+            has_ticket = True
+            print(age >= 18 and has_ticket)
+            print(age < 18 or has_ticket)
+            print(not has_ticket)
+          expected_output: |
+            True
+            True
+            False
+
+        - id: ex_3_4
+          name: Complete the Condition
+          skills: [write_conditions, conditionals]
+          answer_mode: code
+          instructions: |
+            The if/elif/else structure below is missing its conditions. Fill in the blanks so the code correctly classifies the number as positive, negative, or zero.
+          starter_code: |
+            number = -7
+            if ___:
+                print("Positive")
+            elif ___:
+                print("Negative")
+            else:
+                print("Zero")
+
+      debugging:
+        - id: ex_3_5
+          name: Assignment vs Comparison
+          skills: [syntax_errors, comparison_operators]
+          instructions: |
+            The code below has a common bug: using = (assignment) instead of == (comparison). Find and fix it.
+          starter_code: |
+            password = "secret123"
+            user_input = "secret123"
+            if user_input = password:
+                print("Access granted")
+            else:
+                print("Access denied")
+
+        - id: ex_3_6
+          name: Indentation Error
+          skills: [syntax_errors, indentation]
+          instructions: |
+            The code below has indentation errors. Fix the indentation so the if/else block works correctly.
+          starter_code: |
+            score = 85
+            if score >= 70:
+            print("Pass")
+            else:
+            print("Fail")
+
+        - id: ex_3_7
+          name: Missing Colon
+          skills: [syntax_errors, conditionals]
+          instructions: |
+            The code is missing colons at the end of the if/elif/else lines. Add them in the right places.
+          starter_code: |
+            x = 15
+            if x > 10
+                print("Big")
+            elif x > 5
+                print("Medium")
+            else
+                print("Small")
+
+        - id: ex_3_8
+          name: Logic Error
+          skills: [boundary_conditions, comparison_operators]
+          instructions: |
+            The code should print "Adult" for ages 18 and above, but it currently treats 18-year-olds as minors. Fix the comparison operator.
+          starter_code: |
+            age = 18
+            if age > 18:
+                print("Adult")
+            else:
+                print("Minor")
+
+        - id: ex_3_9
+          name: Overlapping Conditions
+          skills: [condition_ordering, logic_errors]
+          instructions: |
+            The grading system below never prints "B" or "C" because the conditions overlap. Fix the order or conditions so all grades are reachable.
+          starter_code: |
+            score = 85
+            if score >= 60:
+                print("D")
+            elif score >= 70:
+                print("C")
+            elif score >= 80:
+                print("B")
+            elif score >= 90:
+                print("A")
+
+      independent_task:
+        - id: ex_3_10
+          name: Even or Odd
+          skills: [modulo, conditionals]
+          instructions: |
+            Write a program that checks whether a number is even or odd.
+
+            1. Create a variable with any integer
+            2. Use the modulo operator (%) to check divisibility by 2
+            3. Print "Even" or "Odd" accordingly
+          starter_code: |
+            # Even or odd checker
+
+        - id: ex_3_11
+          name: Sign Checker
+          skills: [conditionals, comparison_operators]
+          instructions: |
+            Write a program that takes a number and prints whether it is positive, negative, or zero.
+
+            Test it with the value -3.
+          starter_code: |
+            # Sign checker
+
+        - id: ex_3_12
+          name: Grade Calculator
+          skills: [conditionals, multiple_branches]
+          instructions: |
+            Write a program that converts a numeric score (0-100) into a letter grade:
+            - 90+: A
+            - 80-89: B
+            - 70-79: C
+            - 60-69: D
+            - Below 60: F
+
+            Test with score = 78.
+          starter_code: |
+            # Grade calculator
+
+        - id: ex_3_13
+          name: Login Validator
+          skills: [logical_operators, conditionals]
+          instructions: |
+            Write a program that checks a username and password.
+
+            1. Set correct_username = "admin" and correct_password = "pass123"
+            2. Set user_input and pass_input to test values
+            3. Print "Login successful" only if both match, otherwise print "Invalid credentials"
+          starter_code: |
+            # Login validator
+
+  - id: module_4
+    name: Loops and Repetition
+    order: 4
+
+    exercise_pool:
+      guided_practice:
+        - id: ex_4_1
+          name: Count the Iterations
+          skills: [iteration_count, for_loops]
+          instructions: |
+            How many times does the loop below run? Predict the full output — write each printed value on its own line.
+          starter_code: |
+            for i in range(5):
+                print(i)
+          expected_output: |
+            0
+            1
+            2
+            3
+            4
+
+        - id: ex_4_2
+          name: Trace the Values
+          skills: [trace_variables, for_loops]
+          instructions: |
+            Trace the value of `total` through each iteration of the loop. Write the final output.
+          starter_code: |
+            total = 0
+            for num in [2, 4, 6]:
+                total = total + num
+            print(total)
+          expected_output: "12"
+
+        - id: ex_4_3
+          name: While Loop Trace
+          skills: [trace_variables, while_loops]
+          instructions: |
+            Trace through the while loop. For each iteration, note the value of `count` and what gets printed. Write the full output.
+          starter_code: |
+            count = 3
+            while count > 0:
+                print(count)
+                count = count - 1
+            print("Go!")
+          expected_output: |
+            3
+            2
+            1
+            Go!
+
+        - id: ex_4_4
+          name: Range Parameters
+          skills: [range_function, predict_output]
+          instructions: |
+            Predict the output of each loop. Pay attention to the start, stop, and step values in range().
+          starter_code: |
+            for i in range(2, 8):
+                print(i)
+            print("---")
+            for i in range(0, 10, 3):
+                print(i)
+          expected_output: |
+            2
+            3
+            4
+            5
+            6
+            7
+            ---
+            0
+            3
+            6
+            9
+
+      debugging:
+        - id: ex_4_5
+          name: Infinite Loop
+          skills: [infinite_loops, while_loops]
+          instructions: |
+            The loop below never stops. Identify why it runs forever and fix it so it correctly counts down from 5 to 1.
+          starter_code: |
+            n = 5
+            while n > 0:
+                print(n)
+
+        - id: ex_4_6
+          name: Off By One Error
+          skills: [boundary_errors, range_function]
+          instructions: |
+            The code should print numbers 1 through 10 (inclusive), but it's off by one. Fix the range() call.
+          starter_code: |
+            for i in range(1, 10):
+                print(i)
+
+        - id: ex_4_7
+          name: Wrong Counter Update
+          skills: [counter_logic, while_loops]
+          instructions: |
+            The loop should print even numbers from 2 to 10, but the counter update is wrong. Fix it.
+          starter_code: |
+            num = 2
+            while num <= 10:
+                print(num)
+                num = num + 3
+
+        - id: ex_4_8
+          name: Loop Never Starts
+          skills: [initial_conditions, while_loops]
+          instructions: |
+            The loop below never executes. Figure out why and fix the initial condition so it prints 1, 2, 3.
+          starter_code: |
+            i = 10
+            while i <= 3:
+                print(i)
+                i = i + 1
+
+      independent_task:
+        - id: ex_4_9
+          name: Sum Calculator
+          skills: [accumulator, for_loops]
+          instructions: |
+            Write a program that calculates the sum of all numbers from 1 to 100 using a for loop.
+
+            Print the final sum.
+          starter_code: |
+            # Sum of 1 to 100
+
+        - id: ex_4_10
+          name: Multiplication Table
+          skills: [for_loops, arithmetic]
+          instructions: |
+            Write a program that prints the multiplication table for 7 (from 7x1 to 7x10).
+
+            Format each line like: "7 x 1 = 7"
+          starter_code: |
+            # Multiplication table for 7
+
+        - id: ex_4_11
+          name: Count Down Timer
+          skills: [while_loops, counter]
+          instructions: |
+            Write a countdown timer using a while loop that counts from 10 down to 1, then prints "Liftoff!"
+          starter_code: |
+            # Countdown timer
+
+        - id: ex_4_12
+          name: Star Pattern
+          skills: [nested_output, for_loops]
+          instructions: |
+            Write a program that prints a right triangle of stars:
+            *
+            **
+            ***
+            ****
+            *****
+
+            Use a for loop with range(1, 6).
+          starter_code: |
+            # Star pattern
+
+        - id: ex_4_13
+          name: Find the Total
+          skills: [accumulator, iteration]
+          instructions: |
+            Write a program that calculates the total price of items in a list.
+
+            prices = [4.99, 12.50, 3.75, 8.00, 15.25]
+
+            Print the total formatted to 2 decimal places.
+          starter_code: |
+            # Calculate total price
+            prices = [4.99, 12.50, 3.75, 8.00, 15.25]
+
+  - id: module_5
+    name: Functions and Code Organization
+    order: 5
+
+    exercise_pool:
+      guided_practice:
+        - id: ex_5_1
+          name: Trace the Function Call
+          skills: [function_tracing, execution_flow]
+          instructions: |
+            Trace the execution order of this code. Which lines run first? What does the function return? Write the final output.
+          starter_code: |
+            def double(n):
+                return n * 2
+
+            result = double(7)
+            print(result)
+          expected_output: "14"
+
+        - id: ex_5_2
+          name: Return vs Print
+          skills: [return_values, print_vs_return]
+          instructions: |
+            Read the two functions below. One uses return, the other uses print. Predict all the output that appears on the console.
+
+            Think about what `result_a` and `result_b` contain.
+          starter_code: |
+            def add_a(x, y):
+                return x + y
+
+            def add_b(x, y):
+                print(x + y)
+
+            result_a = add_a(3, 4)
+            result_b = add_b(3, 4)
+            print(result_a)
+            print(result_b)
+          expected_output: |
+            7
+            7
+            None
+
+        - id: ex_5_3
+          name: Complete the Function
+          skills: [function_definition, return_values]
+          answer_mode: code
+          instructions: |
+            Complete the function body so it returns the area of a circle. Use the formula: area = 3.14159 * radius ** 2
+
+            The test call at the bottom should print approximately 78.54.
+          starter_code: |
+            def circle_area(radius):
+                # Complete this function
+                pass
+
+            print(circle_area(5))
+
+        - id: ex_5_4
+          name: Parameter Passing
+          skills: [parameters, variable_scope]
+          instructions: |
+            Trace the values of the variables through this code. Pay attention to parameter names vs argument values. What gets printed?
+          starter_code: |
+            def greet(name, greeting):
+                message = greeting + ", " + name + "!"
+                return message
+
+            result = greet("Alice", "Hello")
+            print(result)
+          expected_output: "Hello, Alice!"
+
+      debugging:
+        - id: ex_5_5
+          name: Missing Return
+          skills: [return_values, fix_bugs]
+          instructions: |
+            The function should return the larger of two numbers, but it prints None. Find and fix the bug.
+          starter_code: |
+            def maximum(a, b):
+                if a > b:
+                    result = a
+                else:
+                    result = b
+
+            print(maximum(10, 20))
+
+        - id: ex_5_6
+          name: Wrong Return Placement
+          skills: [return_placement, loops]
+          instructions: |
+            The function should return the sum of all numbers in the list, but it only returns the first number. Fix the return placement.
+          starter_code: |
+            def sum_list(numbers):
+                total = 0
+                for n in numbers:
+                    total = total + n
+                    return total
+
+            print(sum_list([1, 2, 3, 4]))
+
+        - id: ex_5_7
+          name: Parameter Mismatch
+          skills: [parameters, function_calls]
+          instructions: |
+            The function call doesn't match the function definition. Fix the call so it works correctly.
+          starter_code: |
+            def create_email(username, domain):
+                return username + "@" + domain
+
+            email = create_email("gmail.com", "alice")
+            print(email)
+
+        - id: ex_5_8
+          name: Confused Print and Return
+          skills: [print_vs_return, fix_bugs]
+          instructions: |
+            The code uses print() inside the function when it should use return. Fix it so the calculation chain works correctly.
+
+            Expected output: 25
+          starter_code: |
+            def square(n):
+                print(n * n)
+
+            def add_one(n):
+                print(n + 1)
+
+            result = add_one(square(4))
+            print(result)
+
+      independent_task:
+        - id: ex_5_9
+          name: Temperature Function
+          skills: [function_definition, arithmetic]
+          instructions: |
+            Write a function called celsius_to_fahrenheit that takes a Celsius temperature and returns the Fahrenheit equivalent.
+
+            Formula: F = C * 9/5 + 32
+
+            Test it with values 0, 100, and 37.
+          starter_code: |
+            # Temperature conversion function
+
+        - id: ex_5_10
+          name: Maximum Finder
+          skills: [function_definition, conditionals]
+          instructions: |
+            Write a function called find_max that takes three numbers as parameters and returns the largest one.
+
+            Do NOT use the built-in max() function.
+          starter_code: |
+            # Maximum finder function
+
+        - id: ex_5_11
+          name: Greeting Generator
+          skills: [function_definition, conditionals, strings]
+          instructions: |
+            Write a function called greet that takes a name and an optional time_of_day parameter (default "morning").
+
+            It should return a greeting like "Good morning, Alice!"
+          starter_code: |
+            # Greeting generator
+
+        - id: ex_5_12
+          name: Simple Calculator Functions
+          skills: [multiple_functions, arithmetic]
+          instructions: |
+            Write four functions: add, subtract, multiply, and divide. Each takes two numbers and returns the result.
+
+            The divide function should return "Cannot divide by zero" if the second number is 0.
+
+            Test each function with a print() call.
+          starter_code: |
+            # Simple calculator functions
+
+  - id: module_6
+    name: Basic Data Structures
+    order: 6
+
+    exercise_pool:
+      guided_practice:
+        - id: ex_6_1
+          name: List Indexing
+          skills: [indexing, slicing, lists]
+          instructions: |
+            Predict the output of each print statement. Remember: Python lists are zero-indexed, and negative indices count from the end.
+          starter_code: |
+            fruits = ["apple", "banana", "cherry", "date"]
+            print(fruits[0])
+            print(fruits[-1])
+            print(fruits[1:3])
+          expected_output: |
+            apple
+            date
+            ['banana', 'cherry']
+
+        - id: ex_6_2
+          name: Dictionary Access
+          skills: [key_access, dictionaries]
+          instructions: |
+            Predict the output of each print statement. Pay attention to how dictionary values are accessed by key.
+          starter_code: |
+            student = {"name": "Alice", "age": 20, "grade": "A"}
+            print(student["name"])
+            print(student["grade"])
+            print(len(student))
+          expected_output: |
+            Alice
+            A
+            3
+
+        - id: ex_6_3
+          name: List Modification
+          skills: [list_methods, mutation]
+          instructions: |
+            Trace through the list operations. After each modification, note what the list contains. Predict the final output.
+          starter_code: |
+            colors = ["red", "green", "blue"]
+            colors.append("yellow")
+            colors.remove("green")
+            colors[0] = "purple"
+            print(colors)
+          expected_output: "['purple', 'blue', 'yellow']"
+
+        - id: ex_6_4
+          name: Loop Through Collections
+          skills: [iteration, lists, dictionaries]
+          instructions: |
+            Predict the output of each loop. Note how iterating over a dictionary gives you the keys by default.
+          starter_code: |
+            numbers = [10, 20, 30]
+            for n in numbers:
+                print(n * 2)
+            print("---")
+            info = {"a": 1, "b": 2}
+            for key in info:
+                print(key, info[key])
+          expected_output: |
+            20
+            40
+            60
+            ---
+            a 1
+            b 2
+
+      debugging:
+        - id: ex_6_5
+          name: Index Out of Range
+          skills: [index_errors, boundary_checking]
+          instructions: |
+            The code crashes with an IndexError. Fix the index so it accesses a valid element.
+          starter_code: |
+            items = ["pen", "paper", "eraser"]
+            last_item = items[3]
+            print(last_item)
+
+        - id: ex_6_6
+          name: Wrong Key Type
+          skills: [key_errors, dictionaries]
+          instructions: |
+            The code crashes with a KeyError. The dictionary uses string keys, but the lookup uses an integer. Fix it.
+          starter_code: |
+            ages = {"1": "Alice", "2": "Bob", "3": "Charlie"}
+            print(ages[1])
+
+        - id: ex_6_7
+          name: Missing Key
+          skills: [key_errors, get_method]
+          instructions: |
+            The code crashes because it accesses a key that doesn't exist. Fix it using the .get() method with a sensible default value.
+          starter_code: |
+            settings = {"theme": "dark", "font_size": 14}
+            language = settings["language"]
+            print(language)
+
+        - id: ex_6_8
+          name: Modifying While Iterating
+          skills: [mutation_errors, iteration]
+          instructions: |
+            The code tries to remove items from a list while looping over it, which causes unpredictable behavior. Fix it by building a new list instead.
+          starter_code: |
+            numbers = [1, 2, 3, 4, 5, 6]
+            for n in numbers:
+                if n % 2 == 0:
+                    numbers.remove(n)
+            print(numbers)
+
+        - id: ex_6_9
+          name: Empty List Check
+          skills: [boundary_checking, conditionals]
+          instructions: |
+            The code crashes when the list is empty. Add a check before accessing the first element.
+          starter_code: |
+            scores = []
+            highest = scores[0]
+            print(highest)
+
+      independent_task:
+        - id: ex_6_10
+          name: Shopping List Manager
+          skills: [list_methods, lists]
+          instructions: |
+            Write a program that creates a shopping list and performs these operations:
+            1. Start with ["milk", "bread", "eggs"]
+            2. Add "butter" to the end
+            3. Remove "bread"
+            4. Insert "cheese" at position 1
+            5. Print the final list
+          starter_code: |
+            # Shopping list manager
+
+        - id: ex_6_11
+          name: Student Grades
+          skills: [dictionaries, iteration, arithmetic]
+          instructions: |
+            Create a dictionary of student names and their scores. Calculate and print the class average.
+
+            Students: Alice=92, Bob=78, Charlie=85, Diana=95
+          starter_code: |
+            # Student grades
+
+        - id: ex_6_12
+          name: Word Counter
+          skills: [dictionaries, lists, counting]
+          instructions: |
+            Write a program that counts how many times each word appears in this list:
+
+            words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
+
+            Print each word and its count.
+          starter_code: |
+            # Word counter
+            words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
+
+        - id: ex_6_13
+          name: Contact Book
+          skills: [nested_structures, functions]
+          instructions: |
+            Write a function called find_contact that takes a contact book (list of dictionaries) and a name, and returns the matching contact's phone number. Return "Not found" if the name isn't in the book.
+
+            Test with: [{"name": "Alice", "phone": "555-0001"}, {"name": "Bob", "phone": "555-0002"}]
+          starter_code: |
+            # Contact book
+
+        - id: ex_6_14
+          name: List Statistics
+          skills: [lists, loops, arithmetic]
+          instructions: |
+            Write a program that calculates the minimum, maximum, and average of a list of numbers.
+
+            Do NOT use the built-in min(), max(), or sum() functions — use loops.
+
+            numbers = [23, 45, 12, 67, 34, 89, 2, 56]
+          starter_code: |
+            # List statistics
+            numbers = [23, 45, 12, 67, 34, 89, 2, 56]
+
+        - id: ex_6_15
+          name: Inventory System
+          skills: [dictionaries, functions, validation]
+          instructions: |
+            Write two functions:
+            1. add_item(inventory, item, quantity) — adds item to inventory dict
+            2. remove_item(inventory, item, quantity) — removes quantity, never goes below 0
+
+            Test with several add and remove operations, then print the final inventory.
+          starter_code: |
+            # Inventory system

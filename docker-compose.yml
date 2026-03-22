@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - LUMO_JWT_SECRET=${LUMO_JWT_SECRET:-lumo-dev-secret-do-not-use-in-production}
+      - LUMO_LOG_SALT=${LUMO_LOG_SALT:-lumo-dev-salt}
+      - LUMO_SEED_USER_PASSWORD=${LUMO_SEED_USER_PASSWORD:-lumo-dev-123}
+      - LUMO_DB_PATH=/data/lumo.db
+    volumes:
+      - lumo-data:/data
+
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - API_PROXY_TARGET=http://backend:8000
+    depends_on:
+      - backend
+
+volumes:
+  lumo-data:
